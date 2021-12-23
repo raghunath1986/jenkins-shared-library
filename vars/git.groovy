@@ -36,7 +36,7 @@ def CheckoutRepoHttps(String credentialsId,
                     fi
 
                     git checkout $branchName
-
+                    echo "commitid is \$commit"
                     if [[ -n \$commit ]]; then
                         echo "entered if commitid block"
                         commit=`echo \$commit | cut -d' ' -f1`
