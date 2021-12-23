@@ -1,4 +1,4 @@
-def CheckoutRepoHttps(String credentialsId,
+void CheckoutRepoHttps(String credentialsId,
     String repoUrl,
     String branchName,
     String outputPath,
