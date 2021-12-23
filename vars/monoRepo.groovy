@@ -1,14 +1,16 @@
+
+  @NonCPS
+    def getUrlParts(def url){
+        urlParts = url =~ /(?<baseUrl>.*)\/(?<repoOwner>.*)\/(?<repository>.*)/
+        return urlParts
+    }
+
 def call(body){
     def config = [:]
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = config
     body()
     
-  @NonCPS
-    def getUrlParts(def url){
-        urlParts = url =~ /(?<baseUrl>.*)\/(?<repoOwner>.*)\/(?<repository>.*)/
-        return urlParts
-    }
     
   pipeline {
     agent any
