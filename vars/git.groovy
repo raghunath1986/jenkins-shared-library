@@ -24,6 +24,7 @@ def CheckoutRepoHttps(String credentialsId,
                     pattern=`echo \$pattern | sed 's:\\\\\\\\:\\\\\\\\\\\\\\\\:g'`
                     echo "message pattern \$pattern"
                     if [[ -n "\$pattern" ]]; then
+                        echo "enered pattern empty block"
                         commit=`git rev-list --grep=\$pattern origin/$branchName`
                         if [[ -z \$commit ]]; then
                             echo "Unable to find commit with message matching pattern!"
