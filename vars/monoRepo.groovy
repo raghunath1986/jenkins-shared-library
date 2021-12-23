@@ -11,11 +11,12 @@ def call(body){
           cleanWs()
           script {
                  // define some variables
+                 /*
                  def githubUrlParts = GITREPO_URL_HTTPS =~ /(?<baseUrl>.*)\/(?<repoOwner>.*)\/(?<repository>.*)/
                  env.GITREPO_BASEURL = githubUrlParts[0][1]
                  env.GITREPO_OWNER = githubUrlParts[0][2]
                  env.GITREPO_NAME = githubUrlParts[0][3].replace('.git','')
-                 
+                 */           
                  
                  if (!env.GITREPO_BRANCH) {
                      env.GITREPO_BRANCH = "master"
