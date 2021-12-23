@@ -20,6 +20,7 @@ def CheckoutRepoHttps(String credentialsId,
                     git remote add origin $repoUrlAuth
                     git fetch origin
                     pattern=$commitMessagePattern
+                    echo "message pattern \$pattern"
                     pattern=`echo \$pattern | sed 's:\\\\\\\\:\\\\\\\\\\\\\\\\:g'`
 
                     if [[ -n "\$pattern" ]]; then
