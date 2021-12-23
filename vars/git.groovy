@@ -24,19 +24,21 @@ def CheckoutRepoHttps(String credentialsId,
                     pattern=`echo \$pattern | sed 's:\\\\\\\\:\\\\\\\\\\\\\\\\:g'`
                     echo "message pattern \$pattern"
                     if [[ -n "\$pattern" ]]; then
-                        echo "enered pattern empty block"
+                        echo "entered pattern empty block"
                         commit=`git rev-list --grep=\$pattern origin/$branchName`
                         if [[ -z \$commit ]]; then
                             echo "Unable to find commit with message matching pattern!"
                             exit 1
                         fi
                     elif [[ -n "$commitId" ]]; then
+                        echo "entered commitId else block"
                         commit=$commitId
                     fi
 
                     git checkout $branchName
 
                     if [[ -n \$commit ]]; then
+                        echo "entered if commitid block"
                         commit=`echo \$commit | cut -d' ' -f1`
                         git reset --hard \$commit
                     fi
