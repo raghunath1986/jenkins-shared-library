@@ -22,7 +22,7 @@ def CheckoutRepoHttps(String credentialsId,
                     pattern=$commitMessagePattern
                     echo "message pattern \$pattern"
                     pattern=`echo \$pattern | sed 's:\\\\\\\\:\\\\\\\\\\\\\\\\:g'`
-
+                    echo "message pattern $pattern"
                     if [[ -n "\$pattern" ]]; then
                         commit=`git rev-list --grep=\$pattern origin/$branchName`
                         if [[ -z \$commit ]]; then
