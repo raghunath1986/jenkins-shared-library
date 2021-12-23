@@ -21,23 +21,23 @@ def CheckoutRepoHttps(String credentialsId,
                     git fetch origin
                     echo "Message pattern is: $commitMessagePattern"
                     pattern=$commitMessagePattern
-                    echo "Pattern value is: $pattern"
+                    //echo "Pattern value is: $pattern"
                     pattern=`echo \$pattern | sed 's:\\\\\\\\:\\\\\\\\\\\\\\\\:g'`
 
-                    echo "After replace is: $pattern"
+                    //echo "After replace is: $pattern"
                     
                     if [[ -n "\$pattern" ]]; then
-                        echo "first if checked"
+                      //  echo "first if checked"
                         commit=`git rev-list --grep=\$pattern origin/$branchName`
                         if [[ -z \$commit ]]; then
                             echo "Unable to find commit with message matching pattern!"
                             exit 1
                         fi
                     elif [[ -n "$commitId" ]]; then
-                        echo "first else"
+                        //echo "first else"
                         commit=$commitId
                     fi
-                    echo "commit value is $commit"
+                    //echo "commit value is $commit"
                     git checkout $branchName
 
                     if [[ -n \$commit ]]; then
